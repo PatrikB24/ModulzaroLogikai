@@ -40,7 +40,7 @@ public class Modulzaro0608Logikai {
     private static void lepes() {
 
          for (int i = 0; i < palya.length - 1; i++) {
-            if (palya[i] == 'X' && palya[i + 1] == ' ') {
+            if (palya[i] == 'X' && palya[i + 1] == ' ' && palya[i + 2] == 'O') {
                 palya[i] = ' ';
                 palya[i + 1] = 'X';
                 return;
@@ -48,13 +48,13 @@ public class Modulzaro0608Logikai {
                 palya[i] = 'O';
                 palya[i + 1] = ' ';
                 return;
-            } else if (palya[i] == 'X' && palya[i + 1] == 'O' && i < palya.length - 2 && palya[i + 2] == ' ') {
+            } else if (palya[i] == 'X' && palya[i + 1] == 'O' && palya[i + 2] == ' ') {
                 palya[i] = ' ';
                 palya[i + 2] = 'X';
                 return;
-            } else if (palya[i] == 'O' && palya[i + 1] == 'X' && i > 0 && palya[i - 1] == ' ') {
+            } else if (palya[i] == 'O' && palya[i - 1] == 'X' && palya[i - 2] == ' ') {
                 palya[i] = ' ';
-                palya[i - 1] = 'O';
+                palya[i - 2] = 'O';
                 return;
             }
         }
