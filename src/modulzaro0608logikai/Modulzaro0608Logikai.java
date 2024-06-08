@@ -35,34 +35,20 @@ public static char[] jelek;
 }
 
     private static void lepes() {
- int uresIndex = -1; // Az üres hely indexe
-        char jatekosJel; // A jelenlegi játékos jelének tárolására
-
-        // Meghatározzuk az üres hely indexét
-        for (int i = 0; i < palya.length; i++) {
-            if (palya[i] == ' ') {
-                uresIndex = i;
-                break;
+for (int i = 0; i < palya.length / 2; i++) {
+            char Jel = palya[i];
+            palya[i] = palya[palya.length - i - 1];
+            palya[palya.length - i - 1] = Jel;
             }
         }
-
-        // A játékos jelének kiválasztása
-        if (palya[uresIndex - 1] == 'X') {
-            jatekosJel = 'X';
-        } else {
-            jatekosJel = 'O';
-        }
-
-        // Lépés irányától függően megváltoztatjuk a pálya állapotát
-        if (uresIndex - 1 >= 0) { // Balra lépés
-            palya[uresIndex] = palya[uresIndex - 1];
-            palya[uresIndex - 1] = ' ';
-        } else if (uresIndex + 1 < palya.length) { // Jobbra lépés
-            palya[uresIndex] = palya[uresIndex + 1];
-            palya[uresIndex + 1] = ' ';
-        }
     }
-    }
+    
+   
+    
+    
+    
+    
+    
 
 
 
