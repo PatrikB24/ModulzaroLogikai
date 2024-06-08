@@ -1,20 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package modulzaro0608logikai;
 
-/**
- *
- * @author Patrik
- */
+
 public class Modulzaro0608Logikai {
 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
-        // TODO code application logic here
+ 
+        jatek();
+    }
+
+    private static void jatek() {
+        kezdoAllapot(); // Kezdőállapot inicializálása
+        kiirPalya(); // Kiírjuk a kezdőállapotot
+        while (!vege()) { // Amíg nincs vége a játéknak
+            lepes(); // Lépés végrehajtása
+            kiirPalya(); // Kiírjuk az új állapotot
     }
     
 }
