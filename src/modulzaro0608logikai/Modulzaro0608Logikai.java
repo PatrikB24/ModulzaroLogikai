@@ -6,11 +6,13 @@ public class Modulzaro0608Logikai {
     public static char[] jelek;
 
     public static void main(String[] args) {
-
+        
+        megoldasKiirva();
         jatek();
     }
 
     private static void jatek() {
+        System.out.println("A feladatleírás alapján a kód: ");
         kezdoAllapot(); // Kezdőállapot inicializálása
         kiirPalya(); // Kiírjuk a kezdőállapotot
         System.out.println("");
@@ -41,7 +43,7 @@ public class Modulzaro0608Logikai {
     private static void lepes() {
 
         for (int i = 0; i < palya.length - 1; i++) {
-            if (palya[i] == 'X' && palya[i + 1] == ' ' && palya[i + 2] == 'O' && (i) >= 0 && palya[i - 1] != 'O' && palya[i - 1] != 0) {
+            if (palya[i] == 'X' && palya[i + 1] == ' ' && palya[i + 2] == 'O' && i >= 0 && palya[i - 1] != 'O') {
                 palya[i] = ' ';
                 palya[i + 1] = 'X';
                 return;
@@ -58,6 +60,7 @@ public class Modulzaro0608Logikai {
                 palya[i - 2] = 'O';
                 return;
             }
+            
         }
     }
 
@@ -69,6 +72,26 @@ public class Modulzaro0608Logikai {
             }
         }
         return true;
+    }
+
+    private static void megoldasKiirva() {
+        System.out.println("A feladatleírás alapján a következő megoldást kellene kiírnia a konzolnak: ");
+        System.out.println("XXX_OOO");
+        System.out.println("XX_XOOO");
+        System.out.println("XXOX_OO");
+        System.out.println("XXOXO_O");
+        System.out.println("XXO_OXO");
+        System.out.println("X_OXOXO <-- itt akadtam el a kódban, az index out of bounds miatt, nem tudtam más feltételt adni, mert ha kivettem a -1 != O feltételt, akkor borult az elötte lévő sorrend");
+        System.out.println("_XOXOXO");
+        System.out.println("OX_XOXO");
+        System.out.println("OXOX_XO");
+        System.out.println("OXOXOX_");
+        System.out.println("OXOXO_X");
+        System.out.println("OXO_OXX");
+        System.out.println("O_OXOXX");
+        System.out.println("OO_XOXX");
+        System.out.println("OOOX_XX");
+        System.out.println("OOO_XXX");
     }
 
 }
