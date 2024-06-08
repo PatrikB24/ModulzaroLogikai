@@ -4,7 +4,7 @@ public class Modulzaro0608Logikai {
 
     public static char[] palya; //pálya állapota
     public static char[] jelek;
-
+/*MODULZÁRÓ LOGIKAI FELADAT: BEK PATRIK*/
     public static void main(String[] args) {
         
         megoldasKiirva();
