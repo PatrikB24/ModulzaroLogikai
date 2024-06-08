@@ -18,8 +18,8 @@ public class Modulzaro0608Logikai {
             lepes(); // Lépés végrehajtása
             kiirPalya(); // Kiírjuk az új állapotot
             System.out.println("");
-            //if(vege()){
-            // break;}
+            if(vege()){
+             break;}
         }
     }
 
@@ -39,49 +39,28 @@ public class Modulzaro0608Logikai {
 
     private static void lepes() {
 
-        boolean xLepett = false;
-        boolean oLepett = false;
-
-        for (int i = 0; i < palya.length - 1; i++) {
-            if (palya[i] == 'X' && palya[i + 1] == ' ' && palya[i + 2] == 'O') {
+         for (int i = 0; i < palya.length - 1; i++) {
+            if (palya[i] == 'X' && palya[i + 1] == ' ') {
                 palya[i] = ' ';
                 palya[i + 1] = 'X';
-                xLepett = true;
-                break;
-            }
-            else {
-            break;}
-        }
-
-        for (int i = palya.length - 1; i > 1; i--) {
-            if (palya[i] == 'O' && palya[i - 1] == ' ' && palya[i - 2] == 'X') {
+                return;
+            } else if (palya[i] == ' ' && palya[i + 1] == 'O') {
+                palya[i] = 'O';
+                palya[i + 1] = ' ';
+                return;
+            } else if (palya[i] == 'X' && palya[i + 1] == 'O' && i < palya.length - 2 && palya[i + 2] == ' ') {
+                palya[i] = ' ';
+                palya[i + 2] = 'X';
+                return;
+            } else if (palya[i] == 'O' && palya[i + 1] == 'X' && i > 0 && palya[i - 1] == ' ') {
                 palya[i] = ' ';
                 palya[i - 1] = 'O';
-                oLepett = true;
-                break;
+                return;
             }
         }
-
-        if (xLepett) {
-            for (int i = 0; i < palya.length - 1; i++) {
-                if (palya[i] == 'X' && palya[i + 1] == 'O' && palya[i + 2] == ' ') {
-                    palya[i] = ' ';
-                    palya[i + 2] = 'X';
-                    break;
-                }
-            }
         }
-
-        if (oLepett) {
-            for (int i = palya.length - 1; i > 0; i--) {
-                if (palya[i] == 'O' && palya[i - 1] == 'X' && palya[i - 2] == ' ') {
-                    palya[i] = ' ';
-                    palya[i - 2] = 'O';
-                    break;
-                }
-            }
-        }
-    }
+    
+    
 
 
 
@@ -95,6 +74,10 @@ private static boolean vege() {
         return true;
     }
 
+}
 
 
-    }
+
+
+
+    
